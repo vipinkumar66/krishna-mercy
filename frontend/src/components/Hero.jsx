@@ -38,7 +38,7 @@ const Hero = () => {
                     </h1 >
             }
 
-            <button className='dark:bg-blue-700 rounded dark:text-white font-base w-32 mt-2 p-2'
+            <button className='bg-blue-700 rounded text-white font-base w-32 mt-2 p-2'
             onClick={toggleHindi}>{buttonText}</button>
         </div>
         <div className='w-1/2'>
