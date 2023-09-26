@@ -21,7 +21,7 @@ const About = () => {
   return (
     <section id="About">
       <div className='container flex flex-row md:flex-col max-w-7xl p-2 mt-2 mx-auto items-center space-y-1'>
-        <h1 className='dark:text-white text-3xl md:text-6xl mt-2 font-bold'>
+        <h1 className='dark:text-white text-3xl md:text-6xl  font-bold'>
             <span className='text-orange-400'>A</span>bout <span className='text-orange-400'>U</span>s
         </h1>
         <div className=' flex  items-center space-x-4 h-[100vh]'>

@@ -10,7 +10,7 @@ import About from './components/About';
 const App = () => {
   return (
     <Router>
-      <section className='dark:bg-[#040D12]'>
+      <section className='dark:bg-[#040D12] '>
       <Navbar />
       <Routes>
         <Route path="/home" element = {<Home/>} />
