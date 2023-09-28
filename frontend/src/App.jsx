@@ -6,6 +6,8 @@ import {
 } from 'react-router-dom'
 import Home from './components/Home';
 import About from './components/About';
+import Blogs from './components/Blogs';
+
 
 const App = () => {
   return (
@@ -16,6 +18,7 @@ const App = () => {
         <Route path="/home" element = {<Home/>} />
         <Route path="/" element = {<Home/>} />
         <Route path="/about" element = {<About/>} />
+        <Route path="/blogs-page" element = {<Blogs/>} />
       </Routes>
       </section>
     </Router>

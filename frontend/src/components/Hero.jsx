@@ -19,9 +19,9 @@ const Hero = () => {
   return (
     <section id='hero-main'>
 
-      <div className=' container flex mx-auto space-x-2 max-w-7xl h-[100vh] items-center'>
+      <div className=' container flex mx-auto space-x-2 max-w-7xl h-[100vh] items-center xl:max-w-9xl'>
         <div className='flex flex-col w-1/2 space-y-2'>
-            <h1 className='dark:text-slate-200 text-2xl font-bold'>
+            <h1 className='dark:text-slate-200 text-2xl font-bold l'>
             ॐ नमो भगवते वासुदेवाय <br />
             जन्माद्यस्य यतोऽन्वयादितरतश्चार्थेष्वभिज्ञ: स्वराट् <br />
             तेने ब्रह्म हृदा य आदिकवये मुह्यन्ति यत्सूरय: । <br />
