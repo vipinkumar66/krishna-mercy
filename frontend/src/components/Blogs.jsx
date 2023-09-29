@@ -1,8 +1,20 @@
 import React from 'react'
 import krishna from '../assets/images/krishna.png'
-
+import UseCrud from '../hooks/UseCrud'
+import useCrud from '../hooks/UseCrud'
 
 const Blogs = () => {
+
+    const {fetchData, dataCRUD, error, isLoading } = useCrud('/blogs/');
+
+    React.useEffect(()=>{
+        console.log(dataCRUD)
+    },[dataCRUD])
+
+    React.useEffect(()=> {
+        fetchData();
+    }, [])
+
   return (
     <section id="blogs__page">
         <div className='container flex flex-col max-w-7xl mx-auto mt-2 p-2'>
