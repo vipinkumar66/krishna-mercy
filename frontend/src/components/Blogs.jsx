@@ -1,11 +1,10 @@
 import React from 'react'
 import krishna from '../assets/images/krishna.png'
 import UseCrud from '../hooks/UseCrud'
-import useCrud from '../hooks/UseCrud'
 
 const Blogs = () => {
 
-    const {fetchData, dataCRUD, error, isLoading } = useCrud('/blogs/');
+    const {fetchData, dataCRUD, error, isLoading } = UseCrud('/blogs/');
 
     React.useEffect(()=>{
         console.log(dataCRUD)
