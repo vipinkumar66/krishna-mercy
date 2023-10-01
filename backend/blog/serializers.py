@@ -1,11 +1,32 @@
 from rest_framework import serializers
 from .models import BlogModel
 from bs4 import BeautifulSoup as bs
+from PIL import Image
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
 
 class BlogModelListSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogModel
         fields = ("title", "image", "created_at",)
+
+    def to_representation(self, instance):
+        representation =  super().to_representation(instance)
+        representation["created_at"] = instance.created_at.strftime('%Y-%m-%d')
+
+        # if instance.image:
+        #     representation['image'] = self.resize_image(instance.image)
+        return representation
+
+    # def resize_image(self, image_instance):
+    #     img = Image.open(image_instance.path)
+    #     resized_image = img.resize((472, 354))
+    #     buffer = BytesIO()
+    #     resized_image.save(buffer, format="PNG")
+    #     resized_image = InMemoryUploadedFile(
+    #         buffer, None, image_instance.name, 'image/png', buffer.getbuffer().nbytes, None
+    #     )
+    #     return resized_image
 
 class SingleBlogSerializer(serializers.ModelSerializer):
     class Meta:

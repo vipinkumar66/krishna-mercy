@@ -1,13 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import krishna from '../assets/images/krishna.png'
 import UseCrud from '../hooks/UseCrud'
+import { BlogsListContext } from '../context/BlogsList'
 
 const Blogs = () => {
-
+    const { setAllBlogs, allBlogs }  = useContext(BlogsListContext);
     const {fetchData, dataCRUD, error, isLoading } = UseCrud('/blogs/');
 
     React.useEffect(()=>{
-        console.log(dataCRUD)
+        if (dataCRUD){
+            setAllBlogs(dataCRUD)
+        }else{
+            console.log("There is no data")
+        }
     },[dataCRUD])
 
     React.useEffect(()=> {
@@ -28,30 +33,20 @@ const Blogs = () => {
                 </p>
             </div>
             <div className='flex flex-wrap space-x-6 justify-center items-center'>
-                <div className='flex md:basis-[45%]  dark:bg-slate-900 bg-slate-100  rounded-lg mb-10'>
+                {allBlogs && allBlogs.map((blogs,index) => (
+                    <div className='flex md:basis-[45%]  dark:bg-slate-900 bg-slate-100  rounded-lg mb-10' key={index}>
                     <div className='hidden md:block flex-none w-48 relative'>
-                        <img src={krishna} alt="" className='absolute inset-0 w-full h-full object-cover rounded-l-lg'/>
+                        <img src={blogs.image} alt="" className='absolute inset-0 w-full h-full object-cover rounded-l-lg'/>
                     </div>
-                    <div className='flex flex-col space-y-3 p-6 ml-2 w-full'>
-                        <h1 className='text-2xl font-bold dark:text-slate-200  p-1 mb-2'>This is a blog title</h1>
-                        <p className='text-base font-bold dark:text-slate-400'>And here we are going to have some content related to the topic</p>
-                        <p className='text-sm text-blue-500 font-semibold'>Date: 28-09-2023</p>
+                    <div className='flex flex-col space-y-3 p-6 ml-2 w-full' key={index}>
+                        <h1 className='text-2xl font-bold dark:text-slate-200  p-1 mb-2'>{blogs.title}</h1>
+                        {/* <p className='text-base font-bold dark:text-slate-400'>And here we are going to have some content related to the topic</p> */}
+                        <p className='text-sm text-blue-500 font-semibold'>{blogs.created_at}</p>
                         <button className=' dark:bg-blue-700 bg-slate-500 text-slate-50 font-mono w-1/3
                         rounded-lg cursor-pointer hover:bg-blue-950 p-1 font-bold'>Read</button>
                     </div>
                 </div>
-                <div className='flex md:basis-[45%] dark:bg-slate-900 bg-slate-100 rounded-lg mb-10'>
-                    <div className='hidden md:block flex-none w-48 relative'>
-                        <img src={krishna} alt="" className='absolute inset-0 w-full h-full object-cover rounded-l-lg'/>
-                    </div>
-                    <div className='flex flex-col space-y-3 p-6 ml-2 w-full'>
-                        <h1 className='text-2xl font-bold dark:text-slate-200  p-1 mb-2'>This is a blog title</h1>
-                        <p className='text-base font-bold dark:text-slate-400'>And here we are going to have some content related to the topic</p>
-                        <p className='text-sm text-blue-500 font-semibold'>Date: 28-09-2023</p>
-                        <button className=' dark:bg-blue-700 bg-slate-500 text-slate-50 font-mono w-1/3
-                        rounded-lg cursor-pointer hover:bg-blue-950 p-1 font-bold'>Read</button>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     </section>
