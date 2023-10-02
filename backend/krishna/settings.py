@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     # INTERNAL APPS
     'translatee',
     'blog',
+    'books',
     # EXTERNAL APPS
     'django_summernote',
     'rest_framework',

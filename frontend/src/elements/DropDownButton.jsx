@@ -22,8 +22,8 @@ const DropDownButton = () => {
                 dark:text-white hover:text-black">Contact Us</Link>
                 <Link to="/blogs-page" className="block px-4 py-2 hover:bg-gray-100
                 dark:text-white hover:text-black">Blogs</Link>
-                <Link to="/insights" className="block px-4 py-2 hover:bg-blue-100
-                dark:text-white hover:text-black">Insights</Link>
+                <Link to="/books" className="block px-4 py-2 hover:bg-blue-100
+                dark:text-white hover:text-black">Books</Link>
             </div>
           )}
         </div>
