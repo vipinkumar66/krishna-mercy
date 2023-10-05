@@ -1,4 +1,6 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+
 
 const BlogIntro = () => {
   return (
@@ -12,6 +14,7 @@ const BlogIntro = () => {
             <br /><br />
             Join us as we explore the multifaceted gems of spiritual knowledge that illuminate the path to inner peace, purpose, and divine love. Each post is a portal to the boundless realm of spiritual enlightenment, where the wisdom of many books converges to nourish the soul.
             </p>
+            <Link to=""><button className='bg-gradient-to-r from-violet-500 to-fuchsia-500 px-3 py-1 rounded-lg font-bold text-white'>WISDOM</button></Link>
         </div>
     </section>
   )

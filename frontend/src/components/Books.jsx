@@ -4,7 +4,7 @@ import UseCrud from '../hooks/UseCrud'
 
 const Books = () => {
 
-    const {fetchData, dataCRUD, error, isLoading } = UseCrud('books/all_books/1/');
+    const {fetchData, dataCRUD, error, isLoading } = UseCrud('books/all_books/2/');
     const [bookData, setBookData] = React.useState(null);
     const [numPages, setNumPages] = React.useState(null);
 
